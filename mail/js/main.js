@@ -40,9 +40,11 @@ bottone.addEventListener("click",
             
             if (entra == true){
                 console.log(entra, "sei ammesso");
+                document.getElementById("uscita"). innerHTML = "Se in lista";
 
             } else {
                 console.log(entra, "non sei ammesso");
+                document.getElementById("uscita"). innerHTML = "Non sei sulla lista";
             }
             
         }
