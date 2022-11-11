@@ -5,50 +5,52 @@
 
 
 // Email ammesse
-const myArr = ["giorgio@gmail.com", "maria@gmail.com", "piero@gmail.com", "antonio@gmail.com"];
+let inLista = ["giorgio@gmail.com", "maria@gmail.com", "piero@gmail.com", "antonio@gmail.com"];
+console.log(inLista);
 
 // Chiedo l'email all'utente
-email = prompt("Scrivi la tua email");
+let richiesta = document.getElementById("text");
 
-const miaLista = document.querySelector(".myList");
+// creo il bottone
+let bottone = document.getElementById("bottone");
 
-// Aggiungo la mail utente alla lista
-myArr.push(email);
-
-
-// creo la condizione di entrata della mail
+// creo output
+let output = document.getElementById("uscita");
 
 
-// for (let i = 0; i < myArr.length; i++){   
-    
-    
-    let elementoUtente = myArr[i];
-    
-    if (email == myArr [i]){
-        console.log("Benvenuto, sei invitato alla festa!");        
+
+// creo la condizione di entrata della mail, con array
+
+bottone.addEventListener("click",
+    function() {
+
+        let inputUtente = richiesta.value;
+        console.log(inputUtente);
+        let entra = false;
+
         
-    }
-    if (email !== myArr [i]){
-        console.log("Mi spiace non sei invitato");
-        alert ("Mi spiace non sei invitato");
-    }
-        
-        
-            // // // creo elemento li
-            // let liElement = document.createElement("li");
-                    
-            // // // all'interno del li ci saranno le email
-            // liElement.append(elementoUtente);
-                    
-            // // // aggiungo il "li" ad "ul" in html
-            // miaLista.append(liElement);
-                    
-            // console.log( i, elementoUtente);
-        
-    
-// }
-
-
+        // ciclo
+        for (let i = 0; i < inLista.length; i++){   
             
-    
+            
+            if (inputUtente === inLista[i]){
+                entra = true;
+                
+            }
+            
+            if (entra == true){
+                console.log(entra, "sei ammesso");
 
+            } else {
+                console.log(entra, "non sei ammesso");
+            }
+            
+        }
+    }
+)
+
+
+
+    
+    
+    
